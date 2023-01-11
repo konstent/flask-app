@@ -1,0 +1,14 @@
+<p>
+    {% if name %}
+    Your Name is {{name}}
+    If Wrong, Update it in form Below
+    {% else %}
+    Please Enter Your Name: 
+    {% endif %}
+</p>
+<form method='POST'>
+    {{ form.csrf_token() }}
+    {{ form.hidden_tag() }} 
+    {{ form.name.label }} {{ form.name }}
+    {{ form.submit }}
+</form>
